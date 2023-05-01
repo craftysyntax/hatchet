@@ -14,6 +14,19 @@ Install PHP dependancies
 composer install
 ```
 
+Copy .env.example to .env and aadjust settings to suit. Make sure at the very least the database and app_url are set 
+
+```
+php artisan storage:link && php artisan key:generate && php artisan migrate 
+
+```
+
+Then seed with the data
+
+```
+php artisan db:seed --class=LocationsSeeder
+``` 
+
 Install Node (Build) dependancies (using yarn)
 ```
 yarn
@@ -28,19 +41,6 @@ Then build and get ready for live.
 ```
 yarn build && yarn run dev
 ```
-
-Copy .env.example to .env and aadjust settings to suit. Make sure at the very least the database and app_url are set 
-
-```
-php artisan storage:link && php artisan key:generate && php artisan migrate 
-
-```
-
-Then seed with the data
-
-```
-php artisan db:seed --class=LocationsSeeder
-``` 
 
 Open your url in your browser
 

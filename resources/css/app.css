@@ -1,0 +1,19 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tall-theme.css';
+@import 'tailwindcss/utilities';
+
+
+input:invalid, textarea:invalid, select:invalid {
+    box-shadow: none;
+}
+
+input, select, textarea, button, div, a {
+    &:focus, &:active, &:hover {
+        outline: none;
+    }
+}
+
+[x-cloak] {
+    display: none;
+}

@@ -23,7 +23,8 @@ class LocationTable extends DataTableComponent
     {
         return [
             Column::make("Id", "id")
-                ->sortable(),
+                ->sortable()
+                ->collapseOnTablet(),
             Column::make('Name')
                 ->sortable()
                 ->searchable(),
@@ -50,6 +51,13 @@ class LocationTable extends DataTableComponent
         ];
     }
 
+    /**
+     * Create required filters
+     * 
+     * TODO: make the min/max aware of each other s
+     *
+     * @return array
+     */
     public function filters(): array
     {
         return [

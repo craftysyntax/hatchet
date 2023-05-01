@@ -2,6 +2,8 @@
 
 ## Install
 
+Install assumes you are running a local development environmant with Valet or similar. Composer, NodeJS and Yarn are already installed and working.
+
 Clone the repository from Github
 ```
 git clone https://github.com/craftysyntax/hatchet.git ./
@@ -17,7 +19,7 @@ Install Node (Build) dependancies (using yarn)
 yarn
 ```
 
-Update lne 15 of vite.config.js with the url you are using
+Update line 15 of vite.config.js with the url you are using
 ```
 valetTls: 'YOUR_URL'
 ```
@@ -27,10 +29,11 @@ Then build and get ready for live.
 yarn build && yarn run dev
 ```
 
-Set up the database in your .env file and then run
+Copy .env.example to .env and aadjust settings to suit. Make sure at the very least the database and app_url are set 
 
 ```
-php artisan migrate 
+php artisan storage:link && php artisan key:generate && php artisan migrate 
+
 ```
 
 Then seed with the data
